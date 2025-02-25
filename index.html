@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Phantom Hacker</title>
+    <style>
+        body {
+            background-color: black;
+            color: limegreen;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+        #ghost {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            opacity: 0.8;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+        #glitch {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: glitch 0.3s infinite alternate;
+        }
+        @keyframes glitch {
+            0% { transform: translateX(-2px); }
+            100% { transform: translateX(2px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="ghost">👻 The Phantom Hacker 👻</div>
+    <div id="glitch">Watching... in the shadows of the night.</div>
+    <script>
+        const messages = [
+            "I see you...",
+            "Your secrets are not safe...",
+            "The Phantom Hacker is near...",
+            "Are you alone...?",
+            "No firewall can stop me..."
+        ];
+
+        setInterval(() => {
+            document.getElementById("glitch").innerText = messages[Math.floor(Math.random() * messages.length)];
+        }, 3000);
+    </script>
+</body>
+</html>
